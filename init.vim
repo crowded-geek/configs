@@ -1,5 +1,9 @@
 call plug#begin('~/.config/nvim/bundle')
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+Plug 'ryanoasis/vim-devicons'
 Plug 'Nopik/vim-nerdtree-direnter'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
@@ -12,15 +16,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'trevordmiller/nova-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'w0rp/ale'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-markdown-subscope'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'ncm2/ncm2-tagprefix'
-Plug 'ncm2/ncm2-rst-subscope'
 Plug 'vimlab/split-term.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
@@ -35,6 +32,7 @@ call plug#end()
 " basics
 filetype plugin indent on
 syntax on set number
+
 set relativenumber
 set incsearch
 set ignorecase
@@ -45,18 +43,19 @@ set softtabstop=0
 set mouse=a
 set shiftwidth=4
 set expandtab
-set nobackup
-set noswapfile
-set nowrap
 set splitbelow splitright
 set t_Co=256
+set encoding=utf8
 " preferences
 set clipboard+=unnamedplus
 inoremap jk <ESC>
 " whichkey prefs
+let g:colorizer_auto_color = 1
+let g:colorizer_syntax = 1
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
 let NERDTreeMapOpenInTab='<ENTER>'
+let g:mkdp_auto_start = 1
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
@@ -64,6 +63,7 @@ set pastetoggle=<F2>
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
 " Stay in visual mode when indenting. You will never have to run gv after
 " performing an indentation.
 vnoremap < <gv
@@ -114,13 +114,6 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
-" jsx
 let g:jsx_ext_required = 0
+:set number relativenumber
 
-" ale prettier-eslint
-"let g:ale_fixers = {
-"\   'javascript': ['prettier_eslint'],
-"\}
-"let g:ale_fix_on_save = 1
-"let g:ale_javascript_prettier_eslint_executable = 'prettier-eslint'
-"let g:ale_javascript_prettier_eslint_use_global = 1
