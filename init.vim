@@ -44,7 +44,6 @@ set mouse=a
 set shiftwidth=4
 set expandtab
 set splitbelow splitright
-set t_Co=256
 set encoding=utf8
 " preferences
 set clipboard+=unnamedplus
@@ -94,7 +93,7 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " Theme
 syntax enable
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
+" set termguicolors
 set background=dark
 colorscheme palenight
 let g:airline_theme = "palenight"
