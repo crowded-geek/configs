@@ -6,13 +6,8 @@ Plug 'Nopik/vim-nerdtree-direnter'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'BurntSushi/ripgrep'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdcommenter'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'zchee/deoplete-jedi'
-Plug 'altercation/vim-colors-solarized'
 Plug 'trevordmiller/nova-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -21,11 +16,9 @@ Plug 'roxma/nvim-yarp'
 Plug 'vimlab/split-term.vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
-Plug 'bling/vim-airline'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'bling/vim-airline'
 Plug 'Yggdroot/indentLine'
-Plug 'junegunn/fzf'
-Plug 'liuchengxu/vim-which-key'
 " call PlugInstall to install new plugins
 call plug#end()
 

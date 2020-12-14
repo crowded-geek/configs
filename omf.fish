@@ -7,4 +7,5 @@ set -q XDG_DATA_HOME
 source $OMF_PATH/init.fish
 set -g theme_nerd_fonts yes
 set -g theme_date_format "+ %d %H:%M"
+set gclbin /home/crowded/clones/google-cloud-sdk/bin
 set PATH $PATH /home/crowded/flutter/bin/
